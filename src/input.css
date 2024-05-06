@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+          header .navbar .navbarmenu {
+              height: 26px;
+              margin: 17px 0;
+              overflow: hidden;
+              position: relative;
+              transition: width 0.3s ease-in;
+              width: 38px;
+              margin-left: auto;
+              padding: 0px;
+              color: currentColor;
+              cursor: pointer;
+          }
+    
+          header .navbar .navbarmenu span {
+              position: static;
+          }
+    
+          header .navbar .navbarmenu span::before {
+              border-radius: 4px;
+              content: "";
+              display: block;
+              pointer-events: none;
+              position: absolute;
+              right: 0;
+              transition: background-color 0.3s ease-in, rotate 0.3s ease-in, translate 0.3s ease-in, width 0.3s ease-in;
+              top: 0;
+              transform-origin: right top;
+              width: 88%;
+              background-color: #15181a;
+              height: 3px;
+          }
+    
+          header .navbar .navbarmenu span::after {
+              border-radius: 4px;
+              content: "";
+              display: block;
+              pointer-events: none;
+              position: absolute;
+              right: 0;
+              transition: background-color 0.3s ease-in, rotate 0.3s ease-in, translate 0.3s ease-in, width 0.3s ease-in;
+              bottom: 0;
+              transform-origin: right top;
+              width: 60%;
+              background-color: #15181a;
+              height: 3px;
+          }
+    
+          header .navbar .navbarmenu::after {
+              border-radius: 4px;
+              content: "";
+              display: block;
+              pointer-events: none;
+              position: absolute;
+              right: 0;
+              transition: background-color 0.3s ease-in, rotate 0.3s ease-in, translate 0.3s ease-in, width 0.3s ease-in;
+              top: 50%;
+              translate: 0 -50%;
+              width: 88%;
+              background-color: #15181a;
+              height: 3px;
+          }
+    
+          header .navbar .navbarmenu.change {
+              margin-right: 0;
+          }
+    
+          header .navbar .navbarmenu.change::after {
+              display: none;
+          }
+    
+          header .navbar .navbarmenu.change span:before {
+              rotate: -46deg;
+              scale: 1.2 1;
+              translate: -3px -2px;
+              display: block;
+              width: 70%;
+          }
+    
+          header .navbar .navbarmenu.change span:after {
+              rotate: 46deg;
+              scale: 1.2 1;
+              translate: 0 1px;
+              display: block;
+              width: 88%;
+          }
+}
